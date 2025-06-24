@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8FEEDA0C2E07B2DF009E1ED7 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEDA0B2E07B2DB009E1ED7 /* todo.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FEED9EF2E078809009E1ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FEED9D92E078807009E1ED7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FEED9E02E078807009E1ED7;
+			remoteInfo = Bluetrinket;
+		};
+		8FEED9F92E078809009E1ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FEED9D92E078807009E1ED7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FEED9E02E078807009E1ED7;
+			remoteInfo = Bluetrinket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8FEED9E12E078807009E1ED7 /* Bluetrinket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluetrinket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEED9EE2E078809009E1ED7 /* BluetrinketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetrinketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEED9F82E078809009E1ED7 /* BluetrinketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetrinketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEEDA0B2E07B2DB009E1ED7 /* todo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8FEEDA0E2E07B449009E1ED7 /* Exceptions for "Bluetrinket" folder in "Bluetrinket" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8FEED9E02E078807009E1ED7 /* Bluetrinket */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8FEED9E32E078807009E1ED7 /* Bluetrinket */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8FEEDA0E2E07B449009E1ED7 /* Exceptions for "Bluetrinket" folder in "Bluetrinket" target */,
+			);
+			path = Bluetrinket;
+			sourceTree = "<group>";
+		};
+		8FEED9F12E078809009E1ED7 /* BluetrinketTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BluetrinketTests;
+			sourceTree = "<group>";
+		};
+		8FEED9FB2E078809009E1ED7 /* BluetrinketUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BluetrinketUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FEED9DE2E078807009E1ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9EB2E078809009E1ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9F52E078809009E1ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8FEED9D82E078807009E1ED7 = {
+			isa = PBXGroup;
+			children = (
+				8FEEDA0B2E07B2DB009E1ED7 /* todo.txt */,
+				8FEED9E32E078807009E1ED7 /* Bluetrinket */,
+				8FEED9F12E078809009E1ED7 /* BluetrinketTests */,
+				8FEED9FB2E078809009E1ED7 /* BluetrinketUITests */,
+				8FEED9E22E078807009E1ED7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8FEED9E22E078807009E1ED7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FEED9E12E078807009E1ED7 /* Bluetrinket.app */,
+				8FEED9EE2E078809009E1ED7 /* BluetrinketTests.xctest */,
+				8FEED9F82E078809009E1ED7 /* BluetrinketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FEED9E02E078807009E1ED7 /* Bluetrinket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEEDA022E078809009E1ED7 /* Build configuration list for PBXNativeTarget "Bluetrinket" */;
+			buildPhases = (
+				8FEED9DD2E078807009E1ED7 /* Sources */,
+				8FEED9DE2E078807009E1ED7 /* Frameworks */,
+				8FEED9DF2E078807009E1ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8FEED9E32E078807009E1ED7 /* Bluetrinket */,
+			);
+			name = Bluetrinket;
+			packageProductDependencies = (
+			);
+			productName = Bluetrinket;
+			productReference = 8FEED9E12E078807009E1ED7 /* Bluetrinket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FEED9ED2E078809009E1ED7 /* BluetrinketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEEDA052E078809009E1ED7 /* Build configuration list for PBXNativeTarget "BluetrinketTests" */;
+			buildPhases = (
+				8FEED9EA2E078809009E1ED7 /* Sources */,
+				8FEED9EB2E078809009E1ED7 /* Frameworks */,
+				8FEED9EC2E078809009E1ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FEED9F02E078809009E1ED7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8FEED9F12E078809009E1ED7 /* BluetrinketTests */,
+			);
+			name = BluetrinketTests;
+			packageProductDependencies = (
+			);
+			productName = BluetrinketTests;
+			productReference = 8FEED9EE2E078809009E1ED7 /* BluetrinketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FEED9F72E078809009E1ED7 /* BluetrinketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEEDA082E078809009E1ED7 /* Build configuration list for PBXNativeTarget "BluetrinketUITests" */;
+			buildPhases = (
+				8FEED9F42E078809009E1ED7 /* Sources */,
+				8FEED9F52E078809009E1ED7 /* Frameworks */,
+				8FEED9F62E078809009E1ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FEED9FA2E078809009E1ED7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8FEED9FB2E078809009E1ED7 /* BluetrinketUITests */,
+			);
+			name = BluetrinketUITests;
+			packageProductDependencies = (
+			);
+			productName = BluetrinketUITests;
+			productReference = 8FEED9F82E078809009E1ED7 /* BluetrinketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FEED9D92E078807009E1ED7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					8FEED9E02E078807009E1ED7 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					8FEED9ED2E078809009E1ED7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 8FEED9E02E078807009E1ED7;
+					};
+					8FEED9F72E078809009E1ED7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 8FEED9E02E078807009E1ED7;
+					};
+				};
+			};
+			buildConfigurationList = 8FEED9DC2E078807009E1ED7 /* Build configuration list for PBXProject "Bluetrinket" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FEED9D82E078807009E1ED7;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8FEED9E22E078807009E1ED7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FEED9E02E078807009E1ED7 /* Bluetrinket */,
+				8FEED9ED2E078809009E1ED7 /* BluetrinketTests */,
+				8FEED9F72E078809009E1ED7 /* BluetrinketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FEED9DF2E078807009E1ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FEEDA0C2E07B2DF009E1ED7 /* todo.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9EC2E078809009E1ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9F62E078809009E1ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FEED9DD2E078807009E1ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9EA2E078809009E1ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEED9F42E078809009E1ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FEED9F02E078809009E1ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FEED9E02E078807009E1ED7 /* Bluetrinket */;
+			targetProxy = 8FEED9EF2E078809009E1ED7 /* PBXContainerItemProxy */;
+		};
+		8FEED9FA2E078809009E1ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FEED9E02E078807009E1ED7 /* Bluetrinket */;
+			targetProxy = 8FEED9F92E078809009E1ED7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8FEEDA002E078809009E1ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8FEEDA012E078809009E1ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FEEDA032E078809009E1ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bluetrinket/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to keep track of visited places.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to keep track of visited places in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to keep track of visited places.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.Bluetrinket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FEEDA042E078809009E1ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bluetrinket/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to keep track of visited places.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to keep track of visited places in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to keep track of visited places.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.Bluetrinket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8FEEDA062E078809009E1ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.BluetrinketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bluetrinket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bluetrinket";
+			};
+			name = Debug;
+		};
+		8FEEDA072E078809009E1ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.BluetrinketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bluetrinket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bluetrinket";
+			};
+			name = Release;
+		};
+		8FEEDA092E078809009E1ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.BluetrinketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bluetrinket;
+			};
+			name = Debug;
+		};
+		8FEEDA0A2E078809009E1ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drakedong.BluetrinketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bluetrinket;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FEED9DC2E078807009E1ED7 /* Build configuration list for PBXProject "Bluetrinket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEEDA002E078809009E1ED7 /* Debug */,
+				8FEEDA012E078809009E1ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEEDA022E078809009E1ED7 /* Build configuration list for PBXNativeTarget "Bluetrinket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEEDA032E078809009E1ED7 /* Debug */,
+				8FEEDA042E078809009E1ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEEDA052E078809009E1ED7 /* Build configuration list for PBXNativeTarget "BluetrinketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEEDA062E078809009E1ED7 /* Debug */,
+				8FEEDA072E078809009E1ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEEDA082E078809009E1ED7 /* Build configuration list for PBXNativeTarget "BluetrinketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEEDA092E078809009E1ED7 /* Debug */,
+				8FEEDA0A2E078809009E1ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8FEED9D92E078807009E1ED7 /* Project object */;
+}
