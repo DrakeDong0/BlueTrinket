@@ -16,7 +16,7 @@ struct ContentView: View {
     )
     
     let locationManager = CLLocationManager()
-    
+    @State private var responseText = "No response yet"
     
     
     var body: some View {
@@ -25,6 +25,7 @@ struct ContentView: View {
 //                Marker("Apple visitor center", systemImage: "laptopcomputer", coordinate: .appleVisitorCenter)
                 UserAnnotation()
             }
+            .padding(.bottom, 100)
             .tint(.orange)
             .onAppear{
                 locationManager.requestAlwaysAuthorization()
@@ -36,6 +37,7 @@ struct ContentView: View {
                 MapPitchToggle()
             }
             .mapStyle(.hybrid(elevation: .realistic))
+            
 
             VStack{
 //                Image("niagarafalls")
@@ -44,6 +46,12 @@ struct ContentView: View {
 //                    .cornerRadius(10)
 //                    .padding(.all)
 //                Text("Stuff here").font(.body)
+//                Text(responseText)
+//                     .padding()
+//
+//                 Button("Call Go Backend") {
+//                     callBackend()
+//                 }
             }
         }
     }
@@ -56,6 +64,28 @@ struct ContentView: View {
             print("Cannot get user location")
             return nil
         }
+    }
+    func callBackend() {
+        guard let url = URL(string: "http://localhost:8010/test") else{
+            responseText = "Invalid URL"
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    responseText = "Error: \(error.localizedDescription)"
+                }
+                return
+            }
+
+            if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    responseText = "Response: \(responseString)"
+                }
+            }
+        }
+
+        task.resume()
     }
 }
 
