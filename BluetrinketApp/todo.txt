@@ -7,3 +7,9 @@ Aggregate data by date
 
 topology vision system
 link with photos and add albums to locations/trips
+
+
+Colors used:
+
+indigo: 5856D6
+white:  FFFEFA
