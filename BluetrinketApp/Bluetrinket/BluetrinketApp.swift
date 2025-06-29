@@ -11,7 +11,8 @@ import SwiftUI
 struct BluetrinketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            LoginScreen()
         }
     }
 }

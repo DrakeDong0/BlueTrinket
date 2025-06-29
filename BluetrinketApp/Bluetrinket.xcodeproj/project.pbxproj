@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8FEEDA0C2E07B2DF009E1ED7 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEDA0B2E07B2DB009E1ED7 /* todo.txt */; };
+		8FF038622E10D3C600377609 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8FF038612E10D3C600377609 /* Auth0 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		8FEEDA0E2E07B449009E1ED7 /* Exceptions for "Bluetrinket" folder in "Bluetrinket" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Auth0.plist,
 				Info.plist,
 			);
 			target = 8FEED9E02E078807009E1ED7 /* Bluetrinket */;
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF038622E10D3C600377609 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +134,7 @@
 			);
 			name = Bluetrinket;
 			packageProductDependencies = (
+				8FF038612E10D3C600377609 /* Auth0 */,
 			);
 			productName = Bluetrinket;
 			productReference = 8FEED9E12E078807009E1ED7 /* Bluetrinket.app */;
@@ -214,6 +218,9 @@
 			);
 			mainGroup = 8FEED9D82E078807009E1ED7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8FF038602E10D3C600377609 /* XCRemoteSwiftPackageReference "Auth0" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8FEED9E22E078807009E1ED7 /* Products */;
 			projectDirPath = "";
@@ -414,6 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Bluetrinket/Bluetrinket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -448,6 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Bluetrinket/Bluetrinket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -584,6 +593,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8FF038602E10D3C600377609 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8FF038612E10D3C600377609 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FF038602E10D3C600377609 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8FEED9D92E078807009E1ED7 /* Project object */;
 }
