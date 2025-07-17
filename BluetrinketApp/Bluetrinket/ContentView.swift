@@ -1,14 +1,8 @@
-//
-//  ContentView.swift
-//  Bluetrinket
-//
-//  Created by Drake Dong on 2025-06-21.
-//
-
 import SwiftUI
 import MapKit
 
 struct ContentView: View {
+    @EnvironmentObject var AuthModel: AuthViewModel
     @State var cameraPosition = MapCameraPosition.region(
         .init(center: CLLocationCoordinate2D(latitude: 37.3346, longitude: -122.0090),
               latitudinalMeters: 13000,
@@ -49,9 +43,9 @@ struct ContentView: View {
 //                Text(responseText)
 //                     .padding()
 //
-//                 Button("Call Go Backend") {
-//                     callBackend()
-//                 }
+                 Button("Logout") {
+                     AuthModel.logout()
+                 }
             }
         }
     }
