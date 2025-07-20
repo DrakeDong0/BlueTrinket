@@ -4,8 +4,10 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"time"
 
+	// "time"
+
+	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/structs"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
@@ -26,13 +28,6 @@ func DBConnect() *mongo.Client {
 		fmt.Println("Error connecting to MongoDB:", err)
 		panic(err)
 	}
-
-	// Defer disconnect until program exits
-	defer func() {
-		if err = client.Disconnect(context.TODO()); err != nil {
-			panic(err)
-		}
-	}()
 	// Test connection
 	if err := client.Ping(context.TODO(), readpref.Primary()); err != nil {
 		panic(err)
@@ -41,17 +36,31 @@ func DBConnect() *mongo.Client {
 	return client
 }
 
-func GetUserBySub(client *mongo.Client, sub string) (bson.M, error) {
-	userCol := client.Database("BlueTrinket").Collection("Users")
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
+func GetNextCustomerID(ctx context.Context, db *mongo.Client)(int,error) {
+	filter := bson.M{"_id": "customerID"}
+	update := bson.M{"$inc": bson.M{"seq": 1}}
 
-	filter := bson.M{"Sub": sub}
-	var result bson.M
+	opts := options.FindOneAndUpdate().SetReturnDocument(options.After)
+	var result struct {
+		Seq int `bson:"seq"`
+	}
+	customerIDCol := db.Database("BlueTrinket").Collection("Counters")
+	err := customerIDCol.FindOneAndUpdate(ctx, filter, update, opts).Decode(&result)
+	if err != nil {
+		return 0, fmt.Errorf("failed to get next customer ID: %w", err)
+	}
+
+	return result.Seq, nil
+}
+
+func GetUserBySub(ctx context.Context, client *mongo.Client, sub string) (bson.ObjectID, error) {
+	userCol := client.Database("BlueTrinket").Collection("Users")
+	filter := bson.M{"sub": sub}
+	var result structs.UserLookupDBObj
 
 	err := userCol.FindOne(ctx, filter).Decode(&result)
 	if err != nil {
-		return nil, err
+		return bson.NilObjectID, err
 	}
-	return result, nil
+	return result.UserID, nil
 }

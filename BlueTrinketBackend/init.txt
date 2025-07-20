@@ -1,0 +1,6 @@
+Initialize sequences in mongodb: 
+
+db.counters.insertOne({
+  _id: "customerID",
+  seq: 10000000 
+})

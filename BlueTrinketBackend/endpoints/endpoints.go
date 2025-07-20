@@ -1,14 +1,17 @@
 package endpoints
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/db"
 	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/structs"
+	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
@@ -21,6 +24,7 @@ func TestEndpoint(w http.ResponseWriter, r *http.Request) {
 
 func AuthLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("auth login hit")
+	ctx := r.Context()
 
 	authHeader := r.Header.Get("Authorization")
 	parts := strings.SplitN(authHeader, " ", 2)
@@ -57,22 +61,60 @@ func AuthLogin(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println("user info: ", userInfo)
 
-	MongoClient = db.DBConnect()
-
 	// Check for new user
-	_, err = db.GetUserBySub(MongoClient, userInfo.Sub)
+	userID, err := db.GetUserBySub(ctx, MongoClient, userInfo.Sub)
 	if err != nil {
-		if err == mongo.ErrNoDocuments{
-			createUser(MongoClient, userInfo.Sub)
+		fmt.Println("error: ", err)
+		fmt.Printf("raw err: %v, type: %T\n", err, err)
+		if err == mongo.ErrNoDocuments {
+			err = createUser(ctx, MongoClient, userInfo)
+			if err != nil {
+				http.Error(w, "Failed to create user", http.StatusInternalServerError)
+				return
+			}
 			w.Write([]byte(`{"isNewUser": true}`))
-		} else{
-			fmt.Println("error retrieving user")
+		} else {
+			fmt.Println("error retrieving user", err)
 		}
 	} else {
+		fmt.Println("user exists with id: ", userID)
 		w.Write([]byte(`{"isNewUser": false}`))
 	}
 }
 
-func createUser(client *mongo.Client, sub string){
-
+func createUser(ctx context.Context, client *mongo.Client, newUser structs.UserDBObj) error {
+	// Get ID for new user
+	newUserID, err := db.GetNextCustomerID(ctx, client)
+	if err != nil {
+		return fmt.Errorf("Error:%w", err)
+	}
+	fmt.Println("new user id: ", newUserID)
+	// Create new database for user
+	userInfoCol := client.Database(strconv.Itoa(newUserID)).Collection("userInfo")
+	res, err := userInfoCol.InsertOne(ctx, newUser)
+	if err != nil {
+		return fmt.Errorf("error creating new user database:%w", err)
+	}
+	// Add user lookup to BlueTrinket user list for lookup
+	id, ok := res.InsertedID.(bson.ObjectID)
+	if !ok {
+		return fmt.Errorf("inserted ID is not an objectID")
+	}
+	lookupData := []structs.UserLookupDBObj{
+		{
+			UserID: id,
+			Email:  newUser.Email,
+		},
+		{
+			UserID: id,
+			Sub:    newUser.Sub,
+		},
+	}
+	userLookupCol := client.Database("BlueTrinket").Collection("Users")
+	_, err = userLookupCol.InsertMany(ctx, lookupData)
+	if err != nil {
+		return fmt.Errorf("error creating user lookup in BlueTrinket DB:%w", err)
+	}
+	fmt.Println("created new user successfully")
+	return nil
 }

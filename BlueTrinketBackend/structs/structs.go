@@ -1,5 +1,9 @@
 package structs
 
+import (
+	"go.mongodb.org/mongo-driver/v2/bson"
+)
+
 type LoginDBObj struct {
 	Email    string `json:"email" bson:"Email"`
 	Username string `json:"username" bson:"Username"`
@@ -16,4 +20,11 @@ type UserDBObj struct {
 	Picture       string `json:"picture,omitempty"       bson:"picture,omitempty"`
 	Locale        string `json:"locale,omitempty"        bson:"locale,omitempty"`
 	UpdatedAt     string `json:"updated_at,omitempty"    bson:"updated_at,omitempty"`
+}
+
+// Lookup options in BlueTrinket Database
+type UserLookupDBObj struct {
+	UserID bson.ObjectID `json:"user_id,omitempty" bson:"user_id,omitempty"`
+	Email  string        `json:"email,omitempty"         bson:"email,omitempty"`
+	Sub    string        `json:"sub,omitempty"           bson:"sub,omitempty"`
 }

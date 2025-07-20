@@ -2,9 +2,10 @@ package main
 
 import (
 	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/auth"
-	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/endpoints"
 	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/db"
+	"github.com/DrakeDong0/BlueTrinket/BlueTrinketBackend/endpoints"
 
+	"context"
 	"fmt"
 	"net/http"
 	"os"
@@ -30,7 +31,14 @@ func main() {
 	localHost := os.Getenv("PORT")
 
 	// Connect to mongodb
-	MongoClient = db.DBConnect()
+	client := db.DBConnect()
+	defer func() {
+		if err := client.Disconnect(context.Background()); err != nil {
+			fmt.Println("Error disconnecting MongoDB client:", err)
+		}
+	}()
+	// Inject mongo client into packages
+	endpoints.MongoClient = client
 
 	// Init router
 	router := mux.NewRouter()
