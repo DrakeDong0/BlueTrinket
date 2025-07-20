@@ -62,23 +62,17 @@ func AuthLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("user info: ", userInfo)
 
 	// Check for new user
-	userID, err := db.GetUserBySub(ctx, MongoClient, userInfo.Sub)
-	if err != nil {
-		fmt.Println("error: ", err)
-		fmt.Printf("raw err: %v, type: %T\n", err, err)
-		if err == mongo.ErrNoDocuments {
-			err = createUser(ctx, MongoClient, userInfo)
-			if err != nil {
-				http.Error(w, "Failed to create user", http.StatusInternalServerError)
-				return
-			}
-			w.Write([]byte(`{"isNewUser": true}`))
-		} else {
-			fmt.Println("error retrieving user", err)
-		}
-	} else {
-		fmt.Println("user exists with id: ", userID)
+	if doesUserExist, _ := db.DoesUserExist(ctx, MongoClient, userInfo.Email, userInfo.Sub); doesUserExist {
+		fmt.Println("user already exists")
 		w.Write([]byte(`{"isNewUser": false}`))
+	} else {
+		fmt.Println("new user created")
+		err = createUser(ctx, MongoClient, userInfo)
+		if err != nil {
+			http.Error(w, "Failed to create user", http.StatusInternalServerError)
+			return
+		}
+		w.Write([]byte(`{"isNewUser": true}`))
 	}
 }
 

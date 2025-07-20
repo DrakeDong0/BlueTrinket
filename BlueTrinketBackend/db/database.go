@@ -64,3 +64,25 @@ func GetUserBySub(ctx context.Context, client *mongo.Client, sub string) (bson.O
 	}
 	return result.UserID, nil
 }
+
+func GetUserByEmail(ctx context.Context, client *mongo.Client, email string) (bson.ObjectID, error) {
+	userCol := client.Database("BlueTrinket").Collection("Users")
+	filter := bson.M{"email": email}
+	var result structs.UserLookupDBObj
+
+	err := userCol.FindOne(ctx, filter).Decode(&result)
+	if err != nil {
+		return bson.NilObjectID, err
+	}
+	return result.UserID, nil
+}
+
+func DoesUserExist(ctx context.Context, client *mongo.Client, email string, sub string) (bool, error) {
+	if _, err := GetUserByEmail(ctx, client, email); err == nil {
+		return true, nil
+	}
+	if _, err := GetUserBySub(ctx, client, sub); err == nil {
+		return true, nil
+	}
+	return false, nil
+}
