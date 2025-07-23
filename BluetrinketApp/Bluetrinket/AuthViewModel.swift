@@ -63,8 +63,3 @@ class AuthViewModel: ObservableObject {
     }
 
 }
-struct authData{
-    static let clientID = "cdu0WLFF6BVfgKUBVRQw7K6eIo8q9YOD"
-    static let domain = "dev-oxiw8y8jzhq1qfel.us.auth0.com"
-    static let redirectURL = "com.drakedong.Bluetrinket://com.drakedong.Bluetrinket/callback"
-}

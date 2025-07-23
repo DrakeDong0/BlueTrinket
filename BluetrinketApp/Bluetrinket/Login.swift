@@ -14,11 +14,11 @@ struct LoginScreen: View {
             VStack(alignment: .leading, spacing: 40) {
                 Text("Hello!")
                     .font(.system(size: 65, weight: .bold))
-                    .foregroundColor(indigoColor)
+                    .foregroundColor(CustomColors.indigoColor)
 
                 (
                     Text("BlueTrinket")
-                        .foregroundColor(indigoColor)
+                        .foregroundColor(CustomColors.indigoColor)
                     + Text(" maps your world by unveiling places you’ve visited.")
                         .foregroundColor(.gray)
                 )
@@ -28,7 +28,7 @@ struct LoginScreen: View {
                     AuthModel.login()
                 }
                 .padding()
-                .background(indigoColor)
+                .background(CustomColors.indigoColor)
                 .foregroundColor(.white)
                 .cornerRadius(10)
 
@@ -48,10 +48,6 @@ struct LoginScreen: View {
         }
     }
 }
-
-let indigoColor = Color(red: 88/255, green: 86/255, blue: 214/255)
-let x = Color(red: 6/255, green: 148/255, blue: 148/255)
-
 
 #Preview {
     LoginScreen()
