@@ -3,6 +3,7 @@ import Auth0
 
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
+    @Published var navigationPath: [AppPage] = []
 
     func login() {
         Auth0
@@ -40,6 +41,7 @@ class AuthViewModel: ObservableObject {
                         print("Logout failed with: \(error)")
                     }
                 }
+        navigationPath = []
         }
     
     

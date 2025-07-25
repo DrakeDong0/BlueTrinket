@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct ContentView: View {
+struct HomePage: View {
     @EnvironmentObject var AuthModel: AuthViewModel
     @State var cameraPosition = MapCameraPosition.region(
         .init(center: CLLocationCoordinate2D(latitude: 37.3346, longitude: -122.0090),
@@ -25,7 +25,7 @@ struct ContentView: View {
             VStack{
                 HStack {
                     Button(action: {
-                        AuthModel.changePage(1)
+                        AuthModel.navigationPath.append(.settings)
                     }){Image(systemName: "gearshape.fill")
                             .font(.largeTitle)
                             .foregroundColor(Color.gray).opacity(0.7)
@@ -152,6 +152,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomePage()
 }
 
