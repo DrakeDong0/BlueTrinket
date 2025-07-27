@@ -6,6 +6,7 @@ import MapKit
 struct CustomColors{
     static let indigoColor = Color(red: 88/255, green: 86/255, blue: 214/255)
     static let x = Color(red: 6/255, green: 148/255, blue: 148/255)
+    static let whiteColor = Color(red: 1.0, green: 0.996, blue: 0.98)
 }
 
 // Map Settings
@@ -27,3 +28,4 @@ extension CLLocationCoordinate2D {
     static let appleVisitorCenter = CLLocationCoordinate2D(latitude: 37.332753, longitude: -122.018715)
     static let panamaPark = CLLocationCoordinate2D(latitude: 37.347730, longitude: -122.018715)
 }
+

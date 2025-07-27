@@ -7,7 +7,7 @@ struct LoginScreen: View {
     var body: some View {
         ZStack {
             // 1. Background color
-            Color(red: 1.0, green: 0.996, blue: 0.98)
+            Color(CustomColors.whiteColor)
                 .ignoresSafeArea()
 
             // 2. Main content
