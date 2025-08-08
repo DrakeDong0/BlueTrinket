@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+
 let spacingLeft: CGFloat = 30
 
 struct SettingsRow: View {
@@ -15,17 +16,21 @@ struct SettingsRow: View {
                 Text(label).padding(.leading, 5)
                 Spacer()
             }
-            
-        }.padding(.leading, spacingLeft)
+        }
+        .padding(.leading, spacingLeft)
     }
 }
+
 struct SettingsPage: View {
     @EnvironmentObject var AuthModel: AuthViewModel
     @State private var notificationToggle = false
+    
+    @State private var showError = false
+    @State private var errorMessage = ""
 
     var body: some View {
         ZStack {
-            // Make sure this is at the base level
+            // Base background
             Color(CustomColors.whiteColor)
                 .ignoresSafeArea()
 
@@ -76,19 +81,48 @@ struct SettingsPage: View {
                 SettingsRow(icon: "rectangle.portrait.and.arrow.right", label: "Log Out") {
                     AuthModel.logout()
                 }
+                Button(action: {
+                    triggerError("This is a test error triggered by button.")
+                }) {
+                    Text("Trigger Error")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(8)
+                }
+                .padding(.horizontal, 30)
 
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding(.top, 20) // Optional, but ensure you’re not pushing content away from the top too far
+            .padding(.top, 20)
+
+            if showError {
+                VStack {
+                    ErrorToast(message: errorMessage, isShowing: $showError)
+                    Spacer()
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
+                .zIndex(1)
+                .padding(.top, 50)
+            }
         }
         .foregroundColor(.black)
         .font(.title2)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        .animation(.easeInOut, value: showError)
+    }
+    
+    func triggerError(_ message: String) {
+        errorMessage = message
+        withAnimation {
+            showError = true
+        }
     }
 }
 
 #Preview {
     SettingsPage()
+        .environmentObject(AuthViewModel())
 }
