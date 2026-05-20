@@ -8,7 +8,7 @@ struct AccountSettingsPage: View {
             Color(CustomColors.whiteColor)
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 30) {
-                SettingsHeader(title: "Account")
+                SettingsHeader(title: "Account Settings")
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding(.top, 20)

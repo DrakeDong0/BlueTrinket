@@ -19,5 +19,8 @@ struct SettingsHeader: View {
             Text(title)
                 .foregroundColor(CustomColors.indigoColor)
         )
+        Divider()
+            .background(Color.gray.opacity(0.5))
+            .frame(height: 1)
     }
 }

@@ -13,30 +13,36 @@ struct RootView: View {
     @StateObject private var authModel = AuthViewModel()
 
     var body: some View {
-        if authModel.isAuthenticated {
-            NavigationStack(path: $authModel.navigationPath) {
-                HomePage()
-                    .navigationDestination(for: AppPage.self) { page in
-                        switch page {
-                        case .home:
-                            HomePage()
-                        case .settings:
-                            SettingsPage()
-                        case .map_settings:
-                            MapSettingsPage()
-                        case .account_settings:
-                            AccountSettingsPage()
-                        case .privacy_settings:
-                            PrivacySettingsPage()
-                        case .stats_settings:
-                            StatsSettingsPage()
+        ZStack {
+            if authModel.isAuthenticated {
+                NavigationStack(path: $authModel.navigationPath) {
+                    HomePage()
+                        .navigationDestination(for: AppPage.self) { page in
+                            switch page {
+                            case .home:
+                                HomePage()
+                            case .settings:
+                                SettingsPage()
+                            case .map_settings:
+                                MapSettingsPage()
+                            case .account_settings:
+                                AccountSettingsPage()
+                            case .privacy_settings:
+                                PrivacySettingsPage()
+                            case .stats_settings:
+                                StatsSettingsPage()
+                            @unknown default:
+                                ErrorPage(message: "Unknown page: \(String(describing: page))")
+                            }
                         }
-                    }
+                }
+            } else {
+                LoginScreen()
+                    .transition(.opacity)
+                    .zIndex(1)
             }
-            .environmentObject(authModel)
-        } else {
-            LoginScreen()
-                .environmentObject(authModel)
         }
+        .environmentObject(authModel)
+        .animation(.easeInOut, value: authModel.isAuthenticated)
     }
 }
