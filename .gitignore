@@ -1,0 +1,13 @@
+.DS_Store
+**.env
+
+# Xcode user-specific
+**/xcuserdata/
+*.xcuserstate
+
+# Xcode build artifacts
+DerivedData/
+build/
+
+# Go backend binary
+BlueTrinketBackend/server
